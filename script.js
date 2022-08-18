@@ -151,15 +151,48 @@ takeAnswerBtn2.addEventListener("click", function () {
   parentTaskAnswerZoneTask2.append(p);
 });
 
+// сохраняем значение первого инпута в первый абзац
 input1Task3.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    AnswerP1Task3.textContent = "Первое значение: " + this.value;
+    AnswerP1Task3.textContent = "Первое значение: ";
+    let span31 = document.createElement("span");
+    span31.textContent = " " + this.value;
+    span31.id = "span31";
+    AnswerP1Task3.append(span31);
+
     this.value = "";
   }
 });
 
+// сохраняем значение второго инпута во второй абзац
 input2Task3.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    AnswerP2Task3.textContent = "Второе значение " + this.value;
+    AnswerP2Task3.textContent = "Второе значение: ";
+    let span32 = document.createElement("span");
+    span32.id = "span32";
+    span32.textContent = "";
+    span32.textContent = this.value;
+    AnswerP2Task3.append(span32);
+
+    this.value = "";
   }
+});
+
+// функция для нахождения общих делителей
+function takeCommonDivisions(numb1, numb2) {
+  let str = "";
+
+  for (let i = 2; i < numb1; i++) {
+    if (numb1 % i == 0 && numb2 % i == 0) {
+      str += " " + i + ",";
+    }
+  }
+  str = str.substring(0, str.length - 1);
+  return str;
+}
+
+buttonReset3.addEventListener("click", function () {
+  span31.textContent = "";
+  span32.textContent = "";
+  taskAnswerMainTask3.textContent = "Все общие делители этих двух чисел: ";
 });
