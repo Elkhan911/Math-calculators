@@ -2,7 +2,7 @@
 const input1 = document.querySelector("#input1Task1");
 const input2 = document.querySelector("#input2Task1");
 const input3 = document.querySelector("#input3Task1");
-const ParentTaskAnswerZone = document.querySelector("#ParentTaskAnswerZone");
+const parentTaskAnswerZone = document.querySelector("#parentTaskAnswerZone");
 const takeAnswerBtn1 = document.querySelector("#takeAnswerBtn1");
 const buttonReset1 = document.querySelector("#buttonReset1");
 const taskAnswerP1 = document.querySelector("#taskAnswerP1");
@@ -15,6 +15,21 @@ const input21 = document.querySelector("#input1Task2");
 const taskAnswerMain2 = document.querySelector("#taskAnswerMainTask2");
 const takeAnswerBtn2 = document.querySelector("#takeAnswerBtn2");
 const buttonReset2 = document.querySelector("#buttonReset2");
+const parentTaskAnswerZoneTask2 = document.querySelector(
+  "#parentTaskAnswerZoneTask2"
+);
+
+// Variables of Task three
+const takeAnswerBtn3 = document.querySelector("#takeAnswerBtn3");
+const buttonReset3 = document.querySelector("#buttonReset3");
+const parentTaskAnswerZoneTask3 = document.querySelector(
+  "#parentTaskAnswerZoneTask3"
+);
+const AnswerP1Task3 = document.querySelector("#AnswerP1Task3");
+const AnswerP2Task3 = document.querySelector("#AnswerP2Task3");
+const taskAnswerMainTask3 = document.querySelector("#taskAnswerMainTask3");
+const input1Task3 = document.querySelector("#input1Task3");
+const input2Task3 = document.querySelector("#input2Task3");
 
 //******************************************************************************
 //******************************* VARIABLES ************************************
@@ -133,5 +148,18 @@ takeAnswerBtn2.addEventListener("click", function () {
   let p = document.querySelector("p");
   p.textContent =
     "Список делителей: " + takeDivisionsofNumb(Number(span1Task2.textContent));
-  ParentTaskAnswerZoneTask2.append(p);
+  parentTaskAnswerZoneTask2.append(p);
+});
+
+input1Task3.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
+    AnswerP1Task3.textContent = "Первое значение: " + this.value;
+    this.value = "";
+  }
+});
+
+input2Task3.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
+    AnswerP2Task3.textContent = "Второе значение " + this.value;
+  }
 });
