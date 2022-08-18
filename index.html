@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Math Calculators</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <h1 class="mainHeading">Математические калькуляторы на JavaScript</h1>
+
+    <section class="task">
+      <h2 class="task__description">
+        Даны 3 инпута. В них вводятся числа. Проверьте, что эти числа являются
+        тройкой Пифагора: квадрат самого большого числа должен быть равен сумме
+        квадратов двух остальных.
+      </h2>
+      <h3 class="task__hints"></h3>
+
+      <div class="task__keys">
+        <input
+          class="task__input"
+          type="text"
+          name=""
+          id="input1"
+          value=""
+          placeholder="введите значение..."
+        />
+        <input
+          class="task__input"
+          type="text"
+          name=""
+          id="input2"
+          placeholder="введите значение..."
+        />
+        <input
+          class="task__input"
+          type="text"
+          name=""
+          id="input3"
+          placeholder="введите значение..."
+        />
+
+        <button class="button" id="button1">Узнать ответ</button>
+        <button class="button" id="buttonReset">Начать заново</button>
+
+        <div class="task__asnwer-zone" id="ParentTaskAnswerZone"></div>
+
+        <div class="">
+          <p class="task__answer" id="taskAnswer1">
+            Введеные значения являеются Пифагоровой тройкой?
+          </p>
+        </div>
+      </div>
+    </section>
+
     <script src="script.js"></script>
   </body>
 </html>
