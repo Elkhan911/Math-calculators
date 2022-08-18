@@ -1,14 +1,20 @@
-const input1 = document.querySelector("#input1");
-const input2 = document.querySelector("#input2");
-const input3 = document.querySelector("#input3");
+// Variables of Task one
+const input1 = document.querySelector("#input1Task1");
+const input2 = document.querySelector("#input2Task1");
+const input3 = document.querySelector("#input3Task1");
 const ParentTaskAnswerZone = document.querySelector("#ParentTaskAnswerZone");
-const takeAnswerBtn = document.querySelector("#takeAnswerBtn");
-const buttonReset = document.querySelector("#buttonReset");
-
+const takeAnswerBtn1 = document.querySelector("#takeAnswerBtn1");
+const buttonReset1 = document.querySelector("#buttonReset1");
 const taskAnswerP1 = document.querySelector("#taskAnswerP1");
 const taskAnswerP2 = document.querySelector("#taskAnswerP2");
 const taskAnswerP3 = document.querySelector("#taskAnswerP3");
 const taskAnswerMain = document.querySelector("#taskAnswerMain");
+
+// Variables of Task two
+const input21 = document.querySelector("#input1Task2");
+const taskAnswerMain2 = document.querySelector("#taskAnswerMainTask2");
+const takeAnswerBtn2 = document.querySelector("#takeAnswerBtn2");
+const buttonReset2 = document.querySelector("#buttonReset2");
 
 //******************************************************************************
 //******************************* VARIABLES ************************************
@@ -66,7 +72,7 @@ function isItPythagoreanTriple(a, b, c) {
 }
 
 // определяем по клику Пифагоровая ли это тройка и сохраяем результат в span
-takeAnswerBtn.addEventListener("click", function () {
+takeAnswerBtn1.addEventListener("click", function () {
   const a = Number(span1.textContent);
   const b = Number(span2.textContent);
   const c = Number(span3.textContent);
@@ -92,4 +98,40 @@ function resetValues() {
   spanAnswer.textContent = "";
 }
 
-buttonReset.addEventListener("click", resetValues);
+buttonReset1.addEventListener("click", resetValues);
+
+input21.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
+    let span1Task2 = document.createElement("span");
+    span1Task2.textContent += " " + this.value;
+    span1Task2.id = "span1Task2";
+    taskAnswerMain2.append(span1Task2);
+    this.value = "";
+  }
+});
+
+// функция нахождения делителей числа
+function takeDivisionsofNumb(numb) {
+  let arr = [];
+  for (let i = 2; i < numb; i++) {
+    if (numb % i == 0) {
+      arr.push(i);
+    }
+  }
+  let result = "";
+
+  for (let elem of arr) {
+    result += " " + elem + ",";
+  }
+  result = result.slice(0, -1);
+  return result;
+}
+
+// console.log(takeDivisionsofNumb(100));
+
+takeAnswerBtn2.addEventListener("click", function () {
+  let p = document.querySelector("p");
+  p.textContent =
+    "Список делителей: " + takeDivisionsofNumb(Number(span1Task2.textContent));
+  ParentTaskAnswerZoneTask2.append(p);
+});
