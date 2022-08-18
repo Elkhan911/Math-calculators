@@ -39,6 +39,11 @@
   margin-right: 100px;
 }
 
+.task__asnwer-zone {
+  display: flex;
+  flex-direction: column;
+}
+
 .button {
   width: 120px;
   height: 36px;
