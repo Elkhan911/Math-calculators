@@ -31,6 +31,18 @@ const taskAnswerMainTask3 = document.querySelector("#taskAnswerMainTask3");
 const input1Task3 = document.querySelector("#input1Task3");
 const input2Task3 = document.querySelector("#input2Task3");
 
+// Variables of Task four
+const _input1Task4 = document.querySelector("#input1Task4");
+const _input2Task4 = document.querySelector("#input2Task4");
+const _takeAnswerBtn4 = document.querySelector("#takeAnswerBtn4");
+const _buttonReset4 = document.querySelector("#buttonReset4");
+const _parentTaskAnswerZoneTask4 = document.querySelector(
+  "#parentTaskAnswerZoneTask4"
+);
+const _AnswerP1Task4 = document.querySelector("#AnswerP1Task4");
+const _AnswerP2Task4 = document.querySelector("#AnswerP2Task4");
+const _taskAnswerMainTask4 = document.querySelector("#taskAnswerMainTask4");
+
 //******************************************************************************
 //******************************* VARIABLES ************************************
 
@@ -191,14 +203,30 @@ function takeCommonDivisions(numb1, numb2) {
   return str;
 }
 
+// навешиваем функция на кнопку "узнать ответ"
 takeAnswerBtn3.addEventListener("click", function () {
   taskAnswerMainTask3.textContent =
     "Все общие делители этих двух чисел: " +
     takeCommonDivisions(span31.textContent, span32.textContent);
 });
 
+// функция сброса
 buttonReset3.addEventListener("click", function () {
   span31.textContent = "";
   span32.textContent = "";
   taskAnswerMainTask3.textContent = "Все общие делители этих двух чисел: ";
+});
+
+_input1Task4.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
+    _AnswerP1Task4.textContent = "Первое значение: " + this.value;
+    this.value = "";
+  }
+});
+
+_input2Task4.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
+    _AnswerP2Task4.textContent = "Второе значение: " + this.value;
+    this.value = "";
+  }
 });
