@@ -199,19 +199,6 @@ answerBtn4.addEventListener("click", function () {
   );
 });
 
-// функция для записи результата по клику в span
-function getResult(button, span, func) {
-  button.addEventListener("click", function () {
-    span.textContent = func();
-  });
-}
-
-getResult(
-  answerBtn4,
-  spanAnswerTask4,
-  takeCommonDivisions(span41.textContent, span42.textContent)
-);
-
 function reset4() {
   input1Task4.value = "";
   input2Task4.value = "";
