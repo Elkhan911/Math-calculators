@@ -2,52 +2,37 @@
 const input1Task1 = document.querySelector("#_input1Task1");
 const input2Task1 = document.querySelector("#_input2Task1");
 const input3Task1 = document.querySelector("#_input3Task1");
-const takeAnswerBtn1 = document.querySelector("#_takeAnswerBtn1");
-const buttonReset1 = document.querySelector("#_buttonReset1");
 const span1 = document.querySelector("#_span1");
 const span2 = document.querySelector("#_span2");
 const span3 = document.querySelector("#_span3");
-const spanAnswer = document.querySelector("#_spanAnswer");
+const answerBtn1 = document.querySelector("#_answerBtn1");
+const resetBtn1 = document.querySelector("#_resetBtn1");
+const spanAnswerTask1 = document.querySelector("#_spanAnswerTask1");
 
 // Variables of Task two
 const input1Task2 = document.querySelector("#_input1Task2");
-const taskAnswerMain2 = document.querySelector("#_taskAnswerMainTask2");
-const takeAnswerBtn2 = document.querySelector("#_takeAnswerBtn2");
-const buttonReset2 = document.querySelector("#_buttonReset2");
-const parentTaskAnswerZoneTask2 = document.querySelector(
-  "#parentTaskAnswerZoneTask2"
-);
-const span1Task2 = document.querySelector("#_span1Task2");
+const span21 = document.querySelector("#span21");
+const answerBtn2 = document.querySelector("#_answerBtn2");
+const resetBtn2 = document.querySelector("#_resetBtn2");
 const spanAnswerTask2 = document.querySelector("#_spanAnswerTask2");
 
 // Variables of Task three
-const takeAnswerBtn3 = document.querySelector("#_takeAnswerBtn3");
-const buttonReset3 = document.querySelector("#_buttonReset3");
-const parentTaskAnswerZoneTask3 = document.querySelector(
-  "#_parentTaskAnswerZoneTask3"
-);
-const AnswerP1Task3 = document.querySelector("#_AnswerP1Task3");
-const AnswerP2Task3 = document.querySelector("#_AnswerP2Task3");
-const taskAnswerMainTask3 = document.querySelector("#_taskAnswerMainTask3");
 const input1Task3 = document.querySelector("#_input1Task3");
 const input2Task3 = document.querySelector("#_input2Task3");
 const span31 = document.querySelector("#_span31");
 const span32 = document.querySelector("#_span32");
+const answerBtn3 = document.querySelector("#_answerBtn3");
+const resetBtn3 = document.querySelector("#_resetBtn3");
+const spanAnswerTask3 = document.querySelector("#_spanAnswerTask3");
 
 // Variables of Task four
 const input1Task4 = document.querySelector("#_input1Task4");
 const input2Task4 = document.querySelector("#_input2Task4");
-const takeAnswerBtn4 = document.querySelector("#_takeAnswerBtn4");
-const buttonReset4 = document.querySelector("#_buttonReset4");
-const parentTaskAnswerZoneTask4 = document.querySelector(
-  "#_parentTaskAnswerZoneTask4"
-);
-const AnswerP1Task4 = document.querySelector("#_AnswerP1Task4");
-const AnswerP2Task4 = document.querySelector("#_AnswerP2Task4");
-const taskAnswerMainTask4 = document.querySelector("#_taskAnswerMainTask4");
 const span41 = document.querySelector("#_span41");
 const span42 = document.querySelector("#_span42");
-const spanMainAnswer = document.querySelector("#_spanMainAnswer");
+const answerBtn4 = document.querySelector("#_answerBtn4");
+const resetBtn4 = document.querySelector("#_resetBtn4");
+const spanAnswerTask4 = document.querySelector("#_spanAnswerTask4");
 
 //******************************************************************************
 //******************************* VARIABLES ************************************
@@ -55,15 +40,15 @@ const spanMainAnswer = document.querySelector("#_spanMainAnswer");
 //******************************************************************************
 //******************************* TASK ONE  ************************************
 
-// получаем зачение первого инпута и сохраняем в span
+// 1. получаем зачение первого инпута и сохраняем в span
 input1Task1.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    span1.textContent = " " + this.value;
+    span1.textContent = this.value;
     this.value = "";
   }
 });
 
-// получаем зачение второго инпута и сохраняем в span
+// 2. получаем зачение второго инпута и сохраняем в span
 input2Task1.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
     span2.textContent = " " + this.value;
@@ -71,7 +56,7 @@ input2Task1.addEventListener("keydown", function (event) {
   }
 });
 
-// получаем зачение третьего инпута и сохраняем в span
+// 3. получаем зачение третьего инпута и сохраняем в span
 input3Task1.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
     span3.textContent = " " + this.value;
@@ -95,16 +80,16 @@ function isItPythagoreanTriple(a, b, c) {
   } else return false;
 }
 
-// определяем по клику Пифагоровая ли это тройка и сохраяем результат в span
-takeAnswerBtn1.addEventListener("click", function () {
+// 4. определяем по клику Пифагоровая ли это тройка и сохраяем результат в span
+answerBtn1.addEventListener("click", function () {
   const a = Number(span1.textContent);
   const b = Number(span2.textContent);
   const c = Number(span3.textContent);
 
   if (isItPythagoreanTriple(a, b, c) == true) {
-    spanAnswer.textContent = "Да, это Пифагоровая тройка";
+    spanAnswerTask1.textContent = "Да, это Пифагоровая тройка";
   } else {
-    spanAnswer.textContent = "Нет, это не Пифагровая тройка";
+    spanAnswerTask1.textContent = "Нет, это не Пифагровая тройка";
   }
 });
 
@@ -113,17 +98,19 @@ function resetValues() {
   span1.textContent = "";
   span2.textContent = "";
   span3.textContent = "";
-  spanAnswer.textContent = "";
+  spanAnswerTask1.textContent = "";
 }
 
-buttonReset1.addEventListener("click", resetValues);
+// 5. навешиваем функцию сброса на кнопку
+resetBtn1.addEventListener("click", resetValues);
 
 //******************************************************************************
 //******************************* TASK TWO *************************************
 
+// 1. получаем зачение инпута и сохраняем в span
 input1Task2.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    span1Task2.textContent = this.value;
+    span21.textContent = this.value;
     this.value = "";
   }
 });
@@ -142,12 +129,14 @@ function takeDivisionsofNumb(numb) {
 
 // console.log(takeDivisionsofNumb(100));
 
-takeAnswerBtn2.addEventListener("click", function () {
-  spanAnswerTask2.textContent = takeDivisionsofNumb(span1Task2.textContent);
+// 2. навешиваем функцию нахождения делителей на кнопку и сохраняем результат в span
+answerBtn2.addEventListener("click", function () {
+  spanAnswerTask2.textContent = takeDivisionsofNumb(span21.textContent);
 });
 
-buttonReset2.addEventListener("click", function () {
-  span1Task2.textContent = "";
+// 3. навешиваем на клик анонимную функцию сброса
+resetBtn2.addEventListener("click", function () {
+  span21.textContent = "";
   spanAnswerTask2.textContent = "";
   input1Task2.value = "";
 });
@@ -155,7 +144,7 @@ buttonReset2.addEventListener("click", function () {
 //******************************************************************************
 //******************************* TASK THREE ***********************************
 
-// сохраняем значение первого инпута в первый абзац
+// 1. сохраняем значение первого инпута в первый абзац
 input1Task3.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
     span31.textContent = " " + this.value;
@@ -163,7 +152,7 @@ input1Task3.addEventListener("keydown", function (event) {
   }
 });
 
-// сохраняем значение второго инпута во второй абзац
+// 2. сохраняем значение второго инпута во второй абзац
 input2Task3.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
     span32.textContent = this.value;
@@ -186,20 +175,24 @@ function takeCommonDivisions(numb1, numb2) {
 
 // console.log(takeCommonDivisions(100, 200));
 
-// навешиваем функцию на кнопку "узнать ответ"
-takeAnswerBtn3.addEventListener("click", function () {
-  taskAnswerMainTask3.textContent =
+// 3. навешиваем функцию на кнопку "узнать ответ"
+answerBtn3.addEventListener("click", function () {
+  spanAnswerTask3.textContent =
     "Все общие делители этих двух чисел: " +
     takeCommonDivisions(span31.textContent, span32.textContent);
 });
 
-// функция сброса
-buttonReset3.addEventListener("click", function () {
+// 4. функция сброса
+resetBtn3.addEventListener("click", function () {
   span31.textContent = "";
   span32.textContent = "";
-  taskAnswerMainTask3.textContent = "Все общие делители этих двух чисел: ";
+  spanAnswerTask3.textContent = "Все общие делители этих двух чисел: ";
 });
 
+//******************************************************************************
+//******************************* TASK FOUR ************************************
+
+// 1. получаем значение первого инпута и сохраняем в span
 input1Task4.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
     span41.textContent = this.value;
@@ -207,6 +200,7 @@ input1Task4.addEventListener("keydown", function (event) {
   }
 });
 
+// 2. получаем значение второго инпута и сохраняем в span
 input2Task4.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
     span42.textContent = this.value;
@@ -214,6 +208,7 @@ input2Task4.addEventListener("keydown", function (event) {
   }
 });
 
+// функция для определения наибольшего общего делителя
 function takeMaxDivision(numb1, numb2) {
   let arr = [];
   for (let i = 2; i < numb1; i++) {
@@ -224,10 +219,11 @@ function takeMaxDivision(numb1, numb2) {
   return Math.max.apply(null, arr);
 }
 
-// console.log(takeMaxDivision(100, 244));
+console.log(takeMaxDivision(100, 244));
 
-takeAnswerBtn4.addEventListener("click", function () {
-  spanMainAnswer.textContent = takeCommonDivisions(
+// 3. по клику сохраняем результат в span
+answerBtn4.addEventListener("click", function () {
+  spanAnswerTask4.textContent = takeCommonDivisions(
     span41.textContent,
     span42.textContent
   );
@@ -238,7 +234,8 @@ function reset4() {
   input2Task4.value = "";
   span41.textContent = "";
   span42.textContent = "";
-  spanMainAnswer.textContent = "";
+  spanAnswerTask4.textContent = "";
 }
 
-buttonReset4.addEventListener("click", reset4);
+// навешиваем на кнопку функцию сброса
+resetBtn4.addEventListener("click", reset4);

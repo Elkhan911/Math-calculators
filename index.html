@@ -42,23 +42,17 @@
           placeholder="введите значение..."
         />
 
-        <button class="button" id="_takeAnswerBtn1">Узнать ответ</button>
-        <button class="button" id="_buttonReset1">Начать заново</button>
+        <button class="button" id="_answerBtn1">Узнать ответ</button>
+        <button class="button" id="_resetBtn1">Начать заново</button>
 
         <div class="task__asnwer-zone" id="_parentTaskAnswerZone">
-          <p class="task__answer" id="_taskAnswerP1">
-            Первое значение: <span id="_span1"></span>
-          </p>
-          <p class="task__answer" id="_taskAnswerP2">
-            Второе значение: <span id="_span2"></span>
-          </p>
-          <p class="task__answer" id="_taskAnswerP3">
-            Третье значение: <span id="_span3"></span>
-          </p>
+          <p class="task__answer">Первое значение: <span id="_span1"></span></p>
+          <p class="task__answer">Второе значение: <span id="_span2"></span></p>
+          <p class="task__answer">Третье значение: <span id="_span3"></span></p>
 
-          <p class="task__answer" id="_taskAnswerMain">
+          <p class="task__answer">
             Введеные значения являются Пифагоровой тройкой?
-            <span id="_spanAnswer"></span>
+            <span id="_spanAnswerTask1"></span>
           </p>
         </div>
       </div>
@@ -80,12 +74,12 @@
           placeholder="введите значение..."
         />
 
-        <button class="button" id="_takeAnswerBtn2">Узнать ответ</button>
-        <button class="button" id="_buttonReset2">Начать заново</button>
+        <button class="button" id="_answerBtn2">Узнать ответ</button>
+        <button class="button" id="_resetBtn2">Начать заново</button>
 
         <div class="task__asnwer-zone">
           <p class="task__answer">
-            Все делитетели числа: <span id="_span1Task2"></span>
+            Все делитетели числа: <span id="span21"></span>
           </p>
           <p class="task__answer">
             Список делителей: <span id="_spanAnswerTask2"></span>
@@ -119,17 +113,17 @@
           placeholder="введите значение..."
         />
 
-        <button class="button" id="_takeAnswerBtn3">Узнать ответ</button>
-        <button class="button" id="_buttonReset3">Начать заново</button>
+        <button class="button" id="_answerBtn3">Узнать ответ</button>
+        <button class="button" id="_resetBtn3">Начать заново</button>
 
-        <div class="task__asnwer-zone" id="_parentTaskAnswerZoneTask3">
-          <p class="task__answer" id="_AnswerP1Task3">
+        <div class="task__asnwer-zone">
+          <p class="task__answer">
             Первое значение: <span id="_span31"></span>
           </p>
-          <p class="task__answer" id="_AnswerP2Task3">
+          <p class="task__answer">
             Второе значение: <span id="_span32"></span>
           </p>
-          <p class="task__answer" id="_taskAnswerMainTask3">
+          <p class="task__answer" id="_spanAnswerTask3">
             Все общие делители этих двух чисел:
           </p>
         </div>
@@ -161,27 +155,23 @@
           placeholder="введите значение..."
         />
 
-        <button class="button" id="_takeAnswerBtn4">Узнать ответ</button>
-        <button class="button" id="_buttonReset4">Начать заново</button>
+        <button class="button" id="_answerBtn4">Узнать ответ</button>
+        <button class="button" id="_resetBtn4">Начать заново</button>
 
         <div class="task__asnwer-zone" id="_parentTaskAnswerZoneTask4">
-          <p class="task__answer" id="_AnswerP1Task4">
+          <p class="task__answer">
             Первое значение: <span id="_span41"></span>
           </p>
-          <p class="task__answer" id="_AnswerP2Task4">
+          <p class="task__answer">
             Второе значение: <span id="_span42"></span>
           </p>
-          <p class="task__answer" id="_taskAnswerMainTask4">
+          <p class="task__answer">
             Наибольший общий делитель этих двух чисел:
-            <span id="_spanMainAnswer"></span>
+            <span id="_spanAnswerTask4"></span>
           </p>
         </div>
       </div>
     </section>
-
-    <script src="script.js">
-      var list = ["12","23","100","34","56","9","233"];
-      console.log(Math.max.apply(Math,list));
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
