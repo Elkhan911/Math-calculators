@@ -40,29 +40,24 @@ const spanAnswerTask4 = document.querySelector("#_spanAnswerTask4");
 //******************************************************************************
 //******************************* TASK ONE  ************************************
 
+// функция для получения значения с инпута и сохранения значения в спан
+function takeInputValue(input, span) {
+  input.addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
+      span.textContent = this.value;
+      this.value = "";
+    }
+  });
+}
+
 // 1. получаем зачение первого инпута и сохраняем в span
-input1Task1.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    span1.textContent = this.value;
-    this.value = "";
-  }
-});
+takeInputValue(input1Task1, span1);
 
 // 2. получаем зачение второго инпута и сохраняем в span
-input2Task1.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    span2.textContent = " " + this.value;
-    this.value = "";
-  }
-});
+takeInputValue(input2Task1, span2);
 
 // 3. получаем зачение третьего инпута и сохраняем в span
-input3Task1.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    span3.textContent = " " + this.value;
-    this.value = "";
-  }
-});
+takeInputValue(input3Task1, span3);
 
 // функция для определения Пифагоровой тройки
 function isItPythagoreanTriple(a, b, c) {
@@ -108,12 +103,7 @@ resetBtn1.addEventListener("click", resetValues);
 //******************************* TASK TWO *************************************
 
 // 1. получаем зачение инпута и сохраняем в span
-input1Task2.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    span21.textContent = this.value;
-    this.value = "";
-  }
-});
+takeInputValue(input1Task2, span21);
 
 // функция нахождения делителей числа
 function takeDivisionsofNumb(numb) {
@@ -145,20 +135,10 @@ resetBtn2.addEventListener("click", function () {
 //******************************* TASK THREE ***********************************
 
 // 1. сохраняем значение первого инпута в первый абзац
-input1Task3.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    span31.textContent = " " + this.value;
-    this.value = "";
-  }
-});
+takeInputValue(input1Task3, span31);
 
 // 2. сохраняем значение второго инпута во второй абзац
-input2Task3.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    span32.textContent = this.value;
-    this.value = "";
-  }
-});
+takeInputValue(input2Task3, span32);
 
 // функция для нахождения общих делителей
 function takeCommonDivisions(numb1, numb2) {
@@ -193,20 +173,10 @@ resetBtn3.addEventListener("click", function () {
 //******************************* TASK FOUR ************************************
 
 // 1. получаем значение первого инпута и сохраняем в span
-input1Task4.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    span41.textContent = this.value;
-    this.value = "";
-  }
-});
+takeInputValue(input1Task4, span41);
 
 // 2. получаем значение второго инпута и сохраняем в span
-input2Task4.addEventListener("keydown", function (event) {
-  if (event.key == "Enter") {
-    span42.textContent = this.value;
-    this.value = "";
-  }
-});
+takeInputValue(input2Task4, span42);
 
 // функция для определения наибольшего общего делителя
 function takeMaxDivision(numb1, numb2) {
@@ -228,6 +198,19 @@ answerBtn4.addEventListener("click", function () {
     span42.textContent
   );
 });
+
+// функция для записи результата по клику в span
+function getResult(button, span, func) {
+  button.addEventListener("click", function () {
+    span.textContent = func();
+  });
+}
+
+getResult(
+  answerBtn4,
+  spanAnswerTask4,
+  takeCommonDivisions(span41.textContent, span42.textContent)
+);
 
 function reset4() {
   input1Task4.value = "";
