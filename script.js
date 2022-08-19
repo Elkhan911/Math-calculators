@@ -42,6 +42,9 @@ const _parentTaskAnswerZoneTask4 = document.querySelector(
 const _AnswerP1Task4 = document.querySelector("#AnswerP1Task4");
 const _AnswerP2Task4 = document.querySelector("#AnswerP2Task4");
 const _taskAnswerMainTask4 = document.querySelector("#taskAnswerMainTask4");
+const _span41 = document.querySelector("#span41");
+const _span42 = document.querySelector("#span42");
+const _spanMainAnswer = document.querySelector("#spanMainAnswer");
 
 //******************************************************************************
 //******************************* VARIABLES ************************************
@@ -219,14 +222,43 @@ buttonReset3.addEventListener("click", function () {
 
 _input1Task4.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    _AnswerP1Task4.textContent = "Первое значение: " + this.value;
+    _span41.textContent = this.value;
     this.value = "";
   }
 });
 
 _input2Task4.addEventListener("keydown", function (event) {
   if (event.key == "Enter") {
-    _AnswerP2Task4.textContent = "Второе значение: " + this.value;
+    _span42.textContent = this.value;
     this.value = "";
   }
 });
+
+function takeMaxDivision(numb1, numb2) {
+  let arr = [];
+  for (let i = 2; i < numb1; i++) {
+    if (numb1 % i == 0 && numb2 % i == 0) {
+      arr.push(i);
+    }
+  }
+  return Math.max.apply(null, arr);
+}
+
+// console.log(takeMaxDivision(100, 244));
+
+_takeAnswerBtn4.addEventListener("click", function () {
+  _spanMainAnswer.textContent = takeCommonDivisions(
+    _span41.textContent,
+    _span42.textContent
+  );
+});
+
+function reset4() {
+  _input1Task4.value = "";
+  _input2Task4.value = "";
+  _span41.textContent = "";
+  _span42.textContent = "";
+  _spanMainAnswer.textContent = "";
+}
+
+_buttonReset4.addEventListener("click", reset4);

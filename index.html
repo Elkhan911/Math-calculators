@@ -151,15 +151,23 @@
         <button class="button" id="buttonReset4">Начать заново</button>
 
         <div class="task__asnwer-zone" id="parentTaskAnswerZoneTask4">
-          <p class="task__answer" id="AnswerP1Task4">Первое значение:</p>
-          <p class="task__answer" id="AnswerP2Task4">Второе значение:</p>
+          <p class="task__answer" id="AnswerP1Task4">
+            Первое значение: <span id="span41"></span>
+          </p>
+          <p class="task__answer" id="AnswerP2Task4">
+            Второе значение: <span id="span42"></span>
+          </p>
           <p class="task__answer" id="taskAnswerMainTask4">
             Наибольший общий делитель этих двух чисел:
+            <span id="spanMainAnswer"></span>
           </p>
         </div>
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="script.js">
+      var list = ["12","23","100","34","56","9","233"];
+      console.log(Math.max.apply(Math,list));
+    </script>
   </body>
 </html>
