@@ -191,6 +191,12 @@ function takeCommonDivisions(numb1, numb2) {
   return str;
 }
 
+takeAnswerBtn3.addEventListener("click", function () {
+  taskAnswerMainTask3.textContent =
+    "Все общие делители этих двух чисел: " +
+    takeCommonDivisions(span31.textContent, span32.textContent);
+});
+
 buttonReset3.addEventListener("click", function () {
   span31.textContent = "";
   span32.textContent = "";
