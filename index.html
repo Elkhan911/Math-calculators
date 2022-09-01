@@ -156,46 +156,47 @@
     <section class="calculator">
       <div class="calculator__box">
         <h2 class="calculator__header">
-          Даны 2 инпута и кнопка. В инпуты вводятся числа. По нажатию на кнопку
-          выведите наибольший общий делитель этих двух чисел.
+          Введите два числа. По нажатию на кнопку выведится наибольший общий
+          делитель этих двух чисел.
         </h2>
+        <div class="calculator__keys">
+          <input
+            class="calculator__value"
+            type="text"
+            name=""
+            id="_input1calculator4"
+            value=""
+            placeholder="Введите значение..."
+          />
 
-        <input
-          class="calculator__value"
-          type="text"
-          name=""
-          id="_input1calculator4"
-          value=""
-          placeholder="Введите значение..."
-        />
-
-        <input
-          class="calculator__value"
-          type="text"
-          name=""
-          id="_input2calculator4"
-          value=""
-          placeholder="Введите значение..."
-        />
+          <input
+            class="calculator__value"
+            type="text"
+            name=""
+            id="_input2calculator4"
+            value=""
+            placeholder="Введите значение..."
+          />
+        </div>
 
         <button class="button" id="_answerBtn4">Узнать ответ</button>
         <button class="button" id="_resetBtn4">Начать заново</button>
+      </div>
 
-        <div
-          class="calculator__asnwer-zone"
-          id="_parentcalculatorAnswerZonecalculator4"
-        >
-          <p class="calculator__key">
-            Первое значение: <span id="_span41"></span>
-          </p>
-          <p class="calculator__key">
-            Второе значение: <span id="_span42"></span>
-          </p>
-          <p class="calculator__key">
-            Наибольший общий делитель этих двух чисел:
-            <span id="_spanAnswercalculator4"></span>
-          </p>
-        </div>
+      <div class="calculator__keys" id="_parentcalculatorAnswerZonecalculator4">
+        <p class="calculator__key">
+          Первое значение: <span id="_span41"></span>
+        </p>
+        <p class="calculator__key">
+          Второе значение: <span id="_span42"></span>
+        </p>
+      </div>
+
+      <div class="calculator__keys">
+        <p class="calculator__result">
+          Наибольший общий делитель этих двух чисел:
+          <span id="_spanAnswercalculator4"></span>
+        </p>
       </div>
     </section>
     <script src="script.js"></script>
