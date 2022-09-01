@@ -55,62 +55,18 @@
   min-height: 50px;
 }
 
+.calculator__value {
+  width: 200px;
+  height: 30px;
+}
+
 .calculator__result {
   border: 1px solid black;
   width: 300px;
   min-height: 100px;
 }
 
-.calculator__space {
-  margin: 0 0 50px 0;
-}
-
-.calculator__value {
-  width: 200px;
-  height: 30px;
-}
-
-.calculator__asnwer-zone {
-  display: flex;
-  flex-direction: column;
-}
-
-.button {
+.calculator__button {
   width: 120px;
   height: 36px;
-  margin-right: 10px;
-}
-
-.calcul__btn-stl {
-  width: 40px;
-  height: 40px;
-  border: 1px solid blue;
-  font-size: 16px;
-  margin: 5px;
-  font-weight: bold;
-}
-
-.calcul__buttons-extra {
-  width: 180px;
-  border: 1px solid blue;
-  font-size: 16px;
-  margin: 20px 0 20px 0;
-  font-weight: bold;
-}
-
-.calcul__values {
-  width: 300px;
-  margin: 100px;
-  height: 30px;
-  font-size: 15px;
-}
-
-.calcul__result {
-  margin: 10px;
-  font-size: large;
-  font-weight: bold;
-}
-
-#_spanAnswercalculator1 {
-  font-weight: bold;
 }
