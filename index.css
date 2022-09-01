@@ -1,49 +1,76 @@
-body {
-  font-size: 18px;
+.page {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px auto 0;
 }
 
-.mainHeading {
+.page__header {
+  border: 1px solid black;
+  width: 80%;
+  margin: auto;
   text-align: center;
+  font-size: 40px;
 }
 
-.task {
+.calculator {
   margin: 30px auto;
   border: 1px solid black;
-  width: 1200px;
+  width: 80%;
   padding-bottom: 50px;
 }
 
-.task__space {
+.calculator__header {
+  border: 1px solid black;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  font-weight: normal;
+  font-size: 30px;
+}
+
+.calculator__text {
+  border: 1px solid black;
+  font-size: 22px;
+  text-align: center;
+}
+
+.calculator__box {
+  border: 1px solid black;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+.calculator__keys {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.calculator__key {
+  border: 1px solid black;
+  width: 200px;
+  min-height: 50px;
+}
+
+.calculator__result {
+  border: 1px solid black;
+  width: 300px;
+  min-height: 100px;
+}
+
+.calculator__space {
   margin: 0 0 50px 0;
 }
 
-.task__description {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.task__hints {
-  text-align: center;
-  margin: 5px 0 5px;
-}
-
-.task__input {
+.calculator__value {
+  width: 200px;
   height: 30px;
-  margin: 100px 100px 100px 0;
 }
 
-.task__keys {
-  width: 1200px;
-  margin: auto;
-  text-align: center;
-}
-
-.task__answer {
-  display: inline;
-  margin-right: 100px;
-}
-
-.task__asnwer-zone {
+.calculator__asnwer-zone {
   display: flex;
   flex-direction: column;
 }
@@ -84,6 +111,6 @@ body {
   font-weight: bold;
 }
 
-#_spanAnswerTask1 {
+#_spanAnswercalculator1 {
   font-weight: bold;
 }
