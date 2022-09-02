@@ -89,9 +89,9 @@ answerBtn11.addEventListener("click", function () {
   const c = Number(span13.textContent);
   if (isItNaNOrEmpty(a) && isItNaNOrEmpty(b) && isItNaNOrEmpty(c)) {
     if (isItPythagoreanTriple(a, b, c) == true) {
-      spanResult11.textContent = "да, это Пифагоровая тройка";
+      spanResult11.textContent = "Да, это Пифагоровая тройка";
     } else {
-      spanResult11.textContent = "нет, это не Пифагровая тройка";
+      spanResult11.textContent = "Нет, это не Пифагровая тройка";
     }
   }
 });
