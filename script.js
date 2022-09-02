@@ -19,9 +19,9 @@ const input31 = document.querySelector("#_input31");
 const input32 = document.querySelector("#_input32");
 const span31 = document.querySelector("#_span31");
 const span32 = document.querySelector("#_span32");
-const answerBtn3 = document.querySelector("#_answerBtn3");
-const resetBtn3 = document.querySelector("#_resetBtn3");
-const spanAnswer3 = document.querySelector("#_spanAnswer3");
+const answerBtn31 = document.querySelector("#_answerBtn31");
+const resetBtn31 = document.querySelector("#_resetBtn31");
+const span33 = document.querySelector("#_span33");
 
 const input14 = document.querySelector("#_input14");
 const input24 = document.querySelector("#_input24");
@@ -133,40 +133,35 @@ input21.addEventListener("keydown", function (event) {
 // //******************************************************************************
 // //*******************************  THREE ***********************************
 
-// // 1. сохраняем значение первого инпута в первый абзац
-// takeInputValue(input13, span31);
+// 1. сохраняем значение первого инпута в первый абзац
+takeInputValue(input31, span31);
+// 2. сохраняем значение второго инпута во второй абзац
+takeInputValue(input32, span32);
+// функция для нахождения общих делителей
+function takeCommonDivisions(numb1, numb2) {
+  let str = "";
+  for (let i = 2; i < numb1; i++) {
+    if (numb1 % i == 0 && numb2 % i == 0) {
+      str += " " + i + ",";
+    }
+  }
+  str = str.substring(0, str.length - 1);
+  return str;
+}
 
-// // 2. сохраняем значение второго инпута во второй абзац
-// takeInputValue(input23, span32);
-
-// // функция для нахождения общих делителей
-// function takeCommonDivisions(numb1, numb2) {
-//   let str = "";
-
-//   for (let i = 2; i < numb1; i++) {
-//     if (numb1 % i == 0 && numb2 % i == 0) {
-//       str += " " + i + ",";
-//     }
-//   }
-//   str = str.substring(0, str.length - 1);
-//   return str;
-// }
-
-// // console.log(takeCommonDivisions(100, 200));
-
-// // 3. навешиваем функцию на кнопку "узнать ответ"
-// answerBtn3.addEventListener("click", function () {
-//   spanAnswer3.textContent =
-//     "Все общие делители этих двух чисел: " +
-//     takeCommonDivisions(span31.textContent, span32.textContent);
-// });
-
-// // 4. функция сброса
-// resetBtn3.addEventListener("click", function () {
-//   span31.textContent = "";
-//   span32.textContent = "";
-//   spanAnswer3.textContent = "Все общие делители этих двух чисел: ";
-// });
+// 3. навешиваем функцию на кнопку "узнать ответ"
+answerBtn31.addEventListener("click", function () {
+  span33.textContent = takeCommonDivisions(
+    span31.textContent,
+    span32.textContent
+  );
+});
+// 4. функция сброса
+resetBtn31.addEventListener("click", function () {
+  span31.textContent = "";
+  span32.textContent = "";
+  span33.textContent = "";
+});
 
 // //******************************************************************************
 // //*******************************  FOUR ************************************
