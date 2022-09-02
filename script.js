@@ -1,7 +1,6 @@
 // цифры в намеиновании переменных означает следующее:
 // первая цифра - это номер задания, вторая цифра - порядковый номер
 // К примеру, input32 - это третья задача, второй инпут
-
 const input11 = document.querySelector("#_input11");
 const input12 = document.querySelector("#_input12");
 const input13 = document.querySelector("#_input13");
@@ -23,13 +22,13 @@ const answerBtn31 = document.querySelector("#_answerBtn31");
 const resetBtn31 = document.querySelector("#_resetBtn31");
 const span33 = document.querySelector("#_span33");
 
-const input14 = document.querySelector("#_input14");
-const input24 = document.querySelector("#_input24");
+const input41 = document.querySelector("#_input41");
+const input42 = document.querySelector("#_input42");
 const span41 = document.querySelector("#_span41");
 const span42 = document.querySelector("#_span42");
-const answerBtn4 = document.querySelector("#_answerBtn4");
-const resetBtn4 = document.querySelector("#_resetBtn4");
-const spanAnswer4 = document.querySelector("#_spanAnswer4");
+const answerBtn41 = document.querySelector("#_answerBtn41");
+const resetBtn41 = document.querySelector("#_resetBtn41");
+const span43 = document.querySelector("#_span43");
 
 //******************************************************************************
 //******************************* VARIABLES ************************************
@@ -135,8 +134,10 @@ input21.addEventListener("keydown", function (event) {
 
 // 1. сохраняем значение первого инпута в первый абзац
 takeInputValue(input31, span31);
+
 // 2. сохраняем значение второго инпута во второй абзац
 takeInputValue(input32, span32);
+
 // функция для нахождения общих делителей
 function takeCommonDivisions(numb1, numb2) {
   let str = "";
@@ -161,6 +162,7 @@ answerBtn31.addEventListener("click", function () {
     );
   }
 });
+
 // 4. функция сброса
 resetBtn31.addEventListener("click", function () {
   span31.textContent = "";
@@ -171,40 +173,43 @@ resetBtn31.addEventListener("click", function () {
 // //******************************************************************************
 // //*******************************  FOUR ************************************
 
-// // 1. получаем значение первого инпута и сохраняем в span
-// takeInputValue(input14, span41);
+// 1. получаем значение первого инпута и сохраняем в span
+takeInputValue(input41, span41);
 
-// // 2. получаем значение второго инпута и сохраняем в span
-// takeInputValue(input24, span42);
+// 2. получаем значение второго инпута и сохраняем в span
+takeInputValue(input42, span42);
 
-// // функция для определения наибольшего общего делителя
-// function takeMaxDivision(numb1, numb2) {
-//   let arr = [];
-//   for (let i = 2; i < numb1; i++) {
-//     if (numb1 % i == 0 && numb2 % i == 0) {
-//       arr.push(i);
-//     }
-//   }
-//   return Math.max.apply(null, arr);
-// }
+// функция для определения наибольшего общего делителя
+function takeMaxDivision(numb1, numb2) {
+  let arr = [];
+  for (let i = 2; i < numb1; i++) {
+    if (numb1 % i == 0 && numb2 % i == 0) {
+      arr.push(i);
+    }
+  }
+  return Math.max.apply(null, arr);
+}
 
-// console.log(takeMaxDivision(100, 244));
+// 3. по клику сохраняем результат в span
+answerBtn41.addEventListener("click", function () {
+  if (
+    isItNaNOrEmpty(span41.textContent) &&
+    isItNaNOrEmpty(span42.textContent)
+  ) {
+    span43.textContent = takeMaxDivision(
+      span41.textContent,
+      span42.textContent
+    );
+  }
+});
 
-// // 3. по клику сохраняем результат в span
-// answerBtn4.addEventListener("click", function () {
-//   spanAnswer4.textContent = takeCommonDivisions(
-//     span41.textContent,
-//     span42.textContent
-//   );
-// });
+function resetValuesFunc() {
+  input41.value = "";
+  input42.value = "";
+  span41.textContent = "";
+  span42.textContent = "";
+  span43.textContent = "";
+}
 
-// function reset4() {
-//   input14.value = "";
-//   input24.value = "";
-//   span41.textContent = "";
-//   span42.textContent = "";
-//   spanAnswer4.textContent = "";
-// }
-
-// // навешиваем на кнопку функцию сброса
-// resetBtn4.addEventListener("click", reset4);
+// навешиваем на кнопку функцию сброса
+resetBtn41.addEventListener("click", resetValuesFunc);
