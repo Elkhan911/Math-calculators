@@ -1,34 +1,35 @@
-let input1 = document.querySelector("#_input1");
-let input2 = document.querySelector("#_input2");
-let input3 = document.querySelector("#_input3");
-let span1 = document.querySelector("#_span1");
-let span2 = document.querySelector("#_span2");
-let span3 = document.querySelector("#_span3");
-const answerBtn1 = document.querySelector("#_answerBtn1");
-const resetBtn1 = document.querySelector("#_resetBtn1");
-let spanResult = document.querySelector("#_spanResult1");
+// цифры в намеиновании переменных означает следующее:
+// первая цифра - это номер задания, вторая цифра - порядковый номер
+// К примеру, input32 - это третья задача, второй инпут
 
-let input12 = document.querySelector("#_input12");
-let span21 = document.querySelector("#_span21");
-const answerBtn2 = document.querySelector("#_answerBtn2");
-const resetBtn2 = document.querySelector("#_resetBtn2");
-let spanAnswer2 = document.querySelector("#_spanAnswer2");
+const input11 = document.querySelector("#_input11");
+const input12 = document.querySelector("#_input12");
+const input13 = document.querySelector("#_input13");
+const span11 = document.querySelector("#_span11");
+const span12 = document.querySelector("#_span12");
+const span13 = document.querySelector("#_span13");
+const answerBtn11 = document.querySelector("#_answerBtn11");
+const resetBtn11 = document.querySelector("#_resetBtn11");
+const spanResult11 = document.querySelector("#_spanResult11");
 
-let input13 = document.querySelector("#_input13");
-let input23 = document.querySelector("#_input23");
-let span31 = document.querySelector("#_span31");
-let span32 = document.querySelector("#_span32");
+const input21 = document.querySelector("#_input21");
+const span21 = document.querySelector("#_span21");
+
+const input31 = document.querySelector("#_input31");
+const input32 = document.querySelector("#_input32");
+const span31 = document.querySelector("#_span31");
+const span32 = document.querySelector("#_span32");
 const answerBtn3 = document.querySelector("#_answerBtn3");
 const resetBtn3 = document.querySelector("#_resetBtn3");
-let spanAnswer3 = document.querySelector("#_spanAnswer3");
+const spanAnswer3 = document.querySelector("#_spanAnswer3");
 
-let input14 = document.querySelector("#_input14");
-let input24 = document.querySelector("#_input24");
-let span41 = document.querySelector("#_span41");
-let span42 = document.querySelector("#_span42");
+const input14 = document.querySelector("#_input14");
+const input24 = document.querySelector("#_input24");
+const span41 = document.querySelector("#_span41");
+const span42 = document.querySelector("#_span42");
 const answerBtn4 = document.querySelector("#_answerBtn4");
 const resetBtn4 = document.querySelector("#_resetBtn4");
-let spanAnswer4 = document.querySelector("#_spanAnswer4");
+const spanAnswer4 = document.querySelector("#_spanAnswer4");
 
 //******************************************************************************
 //******************************* VARIABLES ************************************
@@ -58,13 +59,13 @@ function takeInputValue(input, span) {
 }
 
 // 1. получаем зачение первого инпута и сохраняем в соответствующий span
-takeInputValue(input1, span1);
+takeInputValue(input11, span11);
 
 // 2. получаем зачение второго инпута и сохраняем в соответствующий span
-takeInputValue(input2, span2);
+takeInputValue(input12, span12);
 
 // 3. получаем зачение третьего инпута и сохраняем в соответствующий span
-takeInputValue(input3, span3);
+takeInputValue(input13, span13);
 
 // функция для определения Пифагоровой тройки
 function isItPythagoreanTriple(a, b, c) {
@@ -83,60 +84,51 @@ function isItPythagoreanTriple(a, b, c) {
 }
 
 // 4. определяем по клику Пифагоровая ли это тройка и сохраяем результат в span
-answerBtn1.addEventListener("click", function () {
-  const a = Number(span1.textContent);
-  const b = Number(span2.textContent);
-  const c = Number(span3.textContent);
-
-  if (isItPythagoreanTriple(a, b, c) == true) {
-    spanResult.textContent = "да, это Пифагоровая тройка";
-  } else {
-    spanResult.textContent = "нет, это не Пифагровая тройка";
+answerBtn11.addEventListener("click", function () {
+  const a = Number(span11.textContent);
+  const b = Number(span12.textContent);
+  const c = Number(span13.textContent);
+  if (isItNaNOrEmpty(a) && isItNaNOrEmpty(b) && isItNaNOrEmpty(c)) {
+    if (isItPythagoreanTriple(a, b, c) == true) {
+      spanResult11.textContent = "да, это Пифагоровая тройка";
+    } else {
+      spanResult11.textContent = "нет, это не Пифагровая тройка";
+    }
   }
 });
 
 // функция сброса
 function resetValues() {
-  span1.textContent = "";
-  span2.textContent = "";
-  span3.textContent = "";
-  spanResult.textContent = "";
+  span11.textContent = "";
+  span12.textContent = "";
+  span13.textContent = "";
+  spanResult11.textContent = "";
 }
 
 // 5. навешиваем функцию сброса на кнопку
-resetBtn1.addEventListener("click", resetValues);
+resetBtn11.addEventListener("click", resetValues);
 
 // //******************************************************************************
 // //*******************************  TWO *************************************
 
-// // 1. получаем зачение инпута и сохраняем в span
-// takeInputValue(input12, span21);
+// функция нахождения делителей числа
+function takeDivisionsofNumb(numb) {
+  let result = "";
+  for (let i = 2; i < numb; i++) {
+    if (numb % i == 0) {
+      result += i + "," + " ";
+    }
+  }
+  result = result.slice(0, -2);
+  return result;
+}
 
-// // функция нахождения делителей числа
-// function takeDivisionsofNumb(numb) {
-//   let result = "";
-//   for (let i = 2; i < numb; i++) {
-//     if (numb % i == 0) {
-//       result += i + "," + " ";
-//     }
-//   }
-//   result = result.slice(0, -2);
-//   return result;
-// }
-
-// // console.log(takeDivisionsofNumb(100));
-
-// // 2. навешиваем функцию нахождения делителей на кнопку и сохраняем результат в span
-// answerBtn2.addEventListener("click", function () {
-//   spanAnswer2.textContent = takeDivisionsofNumb(span21.textContent);
-// });
-
-// // 3. навешиваем на клик анонимную функцию сброса
-// resetBtn2.addEventListener("click", function () {
-//   span21.textContent = "";
-//   spanAnswer2.textContent = "";
-//   input12.value = "";
-// });
+input21.addEventListener("keydown", function (event) {
+  if (event.key == "Enter") {
+    span21.textContent = takeDivisionsofNumb(input21.value);
+    input21.value = "";
+  }
+});
 
 // //******************************************************************************
 // //*******************************  THREE ***********************************

@@ -57,7 +57,8 @@
 
 .calculator__value {
   width: 200px;
-  height: 30px;
+  height: 36px;
+  font-size: 14px;
 }
 
 .calculator__result-spoiler {
@@ -66,6 +67,7 @@
 }
 
 .calculator__result {
+  width: 30px;
   font-weight: bold;
 }
 
