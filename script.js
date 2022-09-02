@@ -151,10 +151,15 @@ function takeCommonDivisions(numb1, numb2) {
 
 // 3. навешиваем функцию на кнопку "узнать ответ"
 answerBtn31.addEventListener("click", function () {
-  span33.textContent = takeCommonDivisions(
-    span31.textContent,
-    span32.textContent
-  );
+  if (
+    isItNaNOrEmpty(span31.textContent) &&
+    isItNaNOrEmpty(span32.textContent)
+  ) {
+    span33.textContent = takeCommonDivisions(
+      span31.textContent,
+      span32.textContent
+    );
+  }
 });
 // 4. функция сброса
 resetBtn31.addEventListener("click", function () {
