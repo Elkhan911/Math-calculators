@@ -11,6 +11,7 @@
   <body class="page">
     <h1 class="page__header">Математические калькуляторы на JavaScript</h1>
 
+    <!-- Первый калькулятор -->
     <section class="calculator">
       <div class="calculator__box">
         <h2 class="calculator__header">
@@ -25,23 +26,20 @@
           <input
             class="calculator__value"
             type="text"
-            name=""
-            id="_input1calculator1"
+            id="_input1"
             value=""
             placeholder="Введите значение..."
           />
           <input
             class="calculator__value"
             type="text"
-            name=""
-            id="_input2calculator1"
+            id="_input2"
             placeholder="Введите значение..."
           />
           <input
             class="calculator__value"
             type="text"
-            name=""
-            id="_input3calculator1"
+            id="_input3"
             placeholder="Введите значение..."
           />
         </div>
@@ -69,14 +67,20 @@
         </div>
 
         <div class="calculator__keys">
-          <p class="calculator__result">
+          <p class="calculator__result-spoiler">
             Введеные значения являются Пифагоровой тройкой?
-            <span id="_spanAnswercalculator1"></span>
+          </p>
+        </div>
+        <div class="calculator__keys">
+          <p class="calculator__result">
+            Ответ:
+            <span id="_spanResult1"> </span>
           </p>
         </div>
       </div>
     </section>
 
+    <!-- Второй калькулятор -->
     <section class="calculator">
       <div class="calculator__box">
         <h2 class="calculator__header">
@@ -88,7 +92,6 @@
           <input
             class="calculator__value"
             type="text"
-            name=""
             id="_input1calculator2"
             value=""
             placeholder="Введите значение..."
@@ -106,7 +109,7 @@
 
         <div class="calculator__keys">
           <p class="calculator__key">
-            Все делитетели числа: <span id="span21"></span>
+            Все делитетели числа: <span id="_span21"></span>
           </p>
           <p class="calculator__key">
             Список делителей: <span id="_spanAnswercalculator2"></span>
@@ -115,6 +118,7 @@
       </div>
     </section>
 
+    <!-- Третий калькулятор -->
     <section class="calculator">
       <div class="calculator__box">
         <h2 class="calculator__header">
@@ -126,7 +130,6 @@
           <input
             class="calculator__value"
             type="text"
-            name=""
             id="_input1calculator3"
             value=""
             placeholder="Введите значение..."
@@ -135,7 +138,6 @@
           <input
             class="calculator__value"
             type="text"
-            name=""
             id="_input2calculator3"
             value=""
             placeholder="Введите значение..."
@@ -167,6 +169,7 @@
       </div>
     </section>
 
+    <!-- Четвертый калькулятор -->
     <section class="calculator">
       <div class="calculator__box">
         <h2 class="calculator__header">
@@ -177,7 +180,6 @@
           <input
             class="calculator__value"
             type="text"
-            name=""
             id="_input1calculator4"
             value=""
             placeholder="Введите значение..."
@@ -186,7 +188,6 @@
           <input
             class="calculator__value"
             type="text"
-            name=""
             id="_input2calculator4"
             value=""
             placeholder="Введите значение..."

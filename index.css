@@ -60,13 +60,24 @@
   height: 30px;
 }
 
-.calculator__result {
+.calculator__result-spoiler {
   border: 1px solid black;
   width: 300px;
-  min-height: 100px;
+}
+
+.calculator__result {
+  font-weight: bold;
 }
 
 .calculator__button {
-  width: 120px;
-  height: 36px;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #eeeeee;
+}
+
+.calculator__button:hover {
+  background-color: #d0d0d0;
+  opacity: 1;
 }
